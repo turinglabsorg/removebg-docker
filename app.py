@@ -17,11 +17,11 @@ def remove_bg():
         now = str(time.time())
         url = json['url']
         data = requests.get(url).content
-        f = open(now + '.jpg','wb')
+        f = open('./origin/' + now + '.jpg','wb')
         f.write(data)
         f.close()
 
-        input_path = './' + now + '.jpg'
+        input_path = './origin/' + now + '.jpg'
         output_path = './static/' + now + '.png'
 
         with open(input_path, 'rb') as i:
