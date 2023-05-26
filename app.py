@@ -27,7 +27,9 @@ def remove_bg():
         with open(input_path, 'rb') as i:
             with open(output_path, 'wb') as o:
                 input = i.read()
-                output = remove(input)
+                model_name = "u2net_human_seg"
+                session = new_session(model_name)
+                output = remove(input, session=session)
                 o.write(output)
         return now + '.png'
     else:
