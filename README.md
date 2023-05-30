@@ -4,7 +4,7 @@ docker build --tag removebg .
 
 # Run docker
 
-docker run removebg
+docker run -d --restart unless-stopped -p 5000:5000 removebg
 
 # Check status
 
